@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.PlayerAlertDialogController"
+            prefHeight="100" prefWidth="60.0">
+    <VBox alignment="CENTER">
+        <Label text="first_name"></Label>
+        <TextField fx:id="first_name"></TextField>
+        <Label text="last_name"></Label>
+        <TextField fx:id="last_name"></TextField>
+        <Label text="address"></Label>
+        <TextField fx:id="address"></TextField>
+        <Label text="postal_code"></Label>
+        <TextField fx:id="postal_code"></TextField>
+        <Label text="province"></Label>
+        <TextField fx:id="province"></TextField>
+        <Label text="phone_number"></Label>
+        <TextField fx:id="phone_number"></TextField>
+        <HBox alignment="CENTER">
+            <Button fx:id="confirm" text="Confirm" onAction="#confirmAction"></Button>
+            <Button fx:id="cancel" text="Cancel" onAction="#cancelAction"></Button>
+        </HBox>
+    </VBox>
+</AnchorPane>

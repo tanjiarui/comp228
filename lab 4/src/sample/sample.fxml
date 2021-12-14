@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<GridPane alignment="center" hgap="10" prefHeight="600.0" prefWidth="1000.0" vgap="10"
+          xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DisplayControl">
+
+    <VBox>
+        <HBox>
+            <VBox alignment="BASELINE_LEFT" prefHeight="250.0" prefWidth="250.0">
+                <children>
+                    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                        <Label text="Name："/>
+
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                        <Label text="Address："/>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                        <Label text="Province："/>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                        <Label text="City："/>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                        <Label text="Post Code："/>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                        <Label text="Phone Number："/>
+                    </HBox>
+                    <HBox alignment="CENTER" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                        <Label text="Email:      "/>
+                    </HBox>
+                </children>
+            </VBox>
+            <VBox>
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="20.0">
+                    <TextField fx:id="nameTextField" promptText="Jone Doe"/>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="20.0">
+                    <TextField fx:id="addressField" promptText="100 Developer Road"/>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="20.0">
+                    <TextField fx:id="provinceTextField" promptText="ON"/>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="20.0">
+                    <TextField fx:id="cityTextField" promptText="Toronto"/>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="20.0">
+                    <TextField fx:id="postCodeTextField" promptText="M3T 2Y7"/>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="20.0">
+                    <TextField fx:id="phoneNumberTextField" promptText="(416)222-2434"/>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="20.0">
+                    <TextField fx:id="emailTextField" promptText="jdoe@java.ca"/>
+                </HBox>
+
+
+            </VBox>
+            <VBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0"></HBox>
+                <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="20.0">
+                    <HBox>
+                        <RadioButton fx:id="studentCouncil" text="Student Council"/>
+                    </HBox>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0" spacing="20.0">
+                    <HBox>
+                        <RadioButton fx:id="volunteerWork" text="Volunteer Work"/>
+                    </HBox>
+                </HBox>
+            </VBox>
+            <VBox prefHeight="400.0" prefWidth="400.0">
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                    <!--<fx:define>-->
+                        <!--<ToggleGroup fx:id="modeToggleGroup"/>-->
+                    <!--</fx:define>-->
+                    <!--<ToggleButton fx:id="manualModeBtn" text="Manual Mode" selected="true" toggleGroup="$modeToggleGroup"/>-->
+                    <!--<ToggleButton fx:id="automaticModeBtn" text="Automatic Mode" toggleGroup="$modeToggleGroup"/>-->
+                    <!--<RadioButton fx:id="computerScience" text="Computer Science" toggleGroup="$modeToggleGroup"/>-->
+                    <!--<RadioButton fx:id="business" text="Business" toggleGroup="$modeToggleGroup"/>-->
+                    <RadioButton fx:id="computerScience" text="Computer Science" />
+                    <RadioButton fx:id="business" text="Business" />
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                    <ComboBox fx:id="classComb" layoutX="50.0" layoutY="200.0" prefWidth="250.0" promptText="Java" onAction="#clssCombChanged">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Java"/>
+                                <String fx:value="C#"/>
+                                <String fx:value="Python"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+                    <ListView fx:id="classList">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Python"></String>
+                                <String fx:value="Java"></String>
+                                <!--<String fx:value="C#"></String>-->
+                            </FXCollections>
+
+                        </items>
+                    </ListView>
+
+                </HBox>
+            </VBox>
+        </HBox>
+        <VBox alignment="CENTER">
+            <Button fx:id="display" text="Display" onAction="#handleSubmitButtonAction"/>
+        </VBox>
+        <ScrollPane fx:id="content" hbarPolicy="ALWAYS" vbarPolicy="ALWAYS" fitToHeight="true" fitToWidth="true" >
+            <content>
+                <VBox prefWidth="200" alignment="center" fx:id="Left">
+                    <!--<Label alignment="center" fx:id="gcProgramLine1" text=""/>-->
+                    <!--<Label alignment="center" fx:id="gcProgramLine2" text=""/>-->
+                    <!--<Label alignment="center" fx:id="gcProgramLine3" text=""/>-->
+                    <TextArea fx:id="contentText" prefHeight="100"/>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </VBox>
+
+</GridPane>
